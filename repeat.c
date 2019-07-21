@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-	int num,i,j,k=0,temp;
+	int num,i,j,k=0,temp,flag=0;
 	scanf("%d",&num);
 	if((num >= 1) && (num <= 100000))
 	{
@@ -18,11 +18,18 @@ int main()
 				{
 					arr[k] = a[i];
 					k++;
+					flag=1;
 
 				}
 			}
 		}
 //	k=k-1;
+		if(flag == 0)
+		{
+			printf("unique");
+		}
+		else
+		{
 		for(i=0;i<k;i++)
 		{
 			for(j=i+1;j<k;j++)
@@ -60,6 +67,7 @@ int main()
 		{
 			printf("%d ",arr[i]);
 		}
+	}
 	}
 		return 0;
 }
